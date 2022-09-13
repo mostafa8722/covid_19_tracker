@@ -1,4 +1,6 @@
 
+import 'dart:convert';
+
 class Country {
 
   String country;
@@ -10,3 +12,5 @@ class Country {
   factory Country.fromJson(Map<String , dynamic> json) => Country(json["country"],json["slug"] ,json["ios2"] );
 
 }
+
+List<Country> countryFromJson (String str) =>  List<Country>.from(json.decode(str).map((x)=>Country.fromJson(x)));

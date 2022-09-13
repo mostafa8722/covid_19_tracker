@@ -1,5 +1,7 @@
 
 
+import 'dart:convert';
+
 class CountrySummary {
 
   String country;
@@ -14,3 +16,5 @@ class CountrySummary {
   factory CountrySummary.fromJson(Map<String, dynamic> json) =>
       CountrySummary(json["country"], json["confirmed"], json["death"], json["recoverd"], json["active"], DateTime.parse(json["date"]));
 }
+
+List<CountrySummary> countrySummaryFromJson (String str) =>  List<CountrySummary>.from(json.decode(str).map((x)=>CountrySummary.fromJson(x)));
