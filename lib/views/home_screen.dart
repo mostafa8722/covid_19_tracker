@@ -12,7 +12,7 @@ class HomeScreen extends StatelessWidget{
       appBar: AppBar(
         backgroundColor: kPrimaryColor,
         centerTitle: true,
-        title: Text("COVID-19 Tracker Live Data"),
+        title: Text("COVID-19 Tracker Live Data",style: TextStyle(color: Colors.white),),
         elevation: 0,
       ),
       body: Column(),
