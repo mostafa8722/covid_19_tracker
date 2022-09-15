@@ -7,9 +7,18 @@ class Country {
   String slug;
   String ios2;
 
-  Country(this.country,this.slug,this.ios2);
+  Country({
+     required this.country,
+    required this.slug,
+    required this.ios2
+});
 
-  factory Country.fromJson(Map<String , dynamic> json) => Country(json["country"],json["slug"] ,json["ios2"] );
+  factory Country.fromJson(Map<String , dynamic> json) => Country(
+
+
+      country:json["Country"],
+      slug:json["Slug"] ,
+      ios2:json["ISO2"] );
 
 }
 

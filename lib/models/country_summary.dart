@@ -7,14 +7,30 @@ class CountrySummary {
   String country;
   int confirmed;
   int death;
-  int recoverd;
+   int recovered;
   int active;
   DateTime date;
 
-  CountrySummary(this.country,this.confirmed,this.death,this.recoverd,this.active,this.date);
+  CountrySummary({
+    required this.country,
+    required this.confirmed,
+    required this.death,
+   required this.recovered,
+    required this.active,
+    required this.date
+  });
 
   factory CountrySummary.fromJson(Map<String, dynamic> json) =>
-      CountrySummary(json["country"], json["confirmed"], json["death"], json["recoverd"], json["active"], DateTime.parse(json["date"]));
+      CountrySummary(
+          country: json["Country"],
+         confirmed: json["Confirmed"],
+          death:json["Deaths"],
+          recovered:json["Recovered"],
+          active: json["Active"],
+          date:DateTime.parse(json["Date"])
+
+          );
+
 }
 
 List<CountrySummary> countrySummaryFromJson (String str) =>  List<CountrySummary>.from(json.decode(str).map((x)=>CountrySummary.fromJson(x)));
